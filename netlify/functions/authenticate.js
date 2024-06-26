@@ -1,6 +1,6 @@
-//authenticate.js
+// netlify/functions/authenticate.js
 const jwt = require('jsonwebtoken');
-const User = require('../models/userModel'); // Ensure this path is correct
+const User = require('../../backend/models/userModel'); // Ensure this path is correct
 
 const authenticate = async (req, res, next) => {
   const token = req.header('Authorization')?.replace('Bearer ', '');

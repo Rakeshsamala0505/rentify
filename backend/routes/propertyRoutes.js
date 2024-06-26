@@ -1,3 +1,4 @@
+//routes/propertyRoutes.js
 const express = require('express');
 const multer = require('multer');
 const Property = require('../models/propertyModel');
