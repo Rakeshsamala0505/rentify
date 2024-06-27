@@ -7,7 +7,18 @@ const authenticate = require('../middleware/authenticate');
 const nodemailer = require('nodemailer');
 
 const router = express.Router();
-const upload = multer({ dest: 'uploads/' });
+
+// Set up multer storage to save files with their original names in 'uploads/' directory
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, 'uploads/');
+    },
+    filename: (req, file, cb) => {
+      cb(null, file.originalname);
+    },
+  });
+  
+  const upload = multer({ storage });
 
 // Add property route
 router.post('/', authenticate, upload.single('image'), async (req, res) => {

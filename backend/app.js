@@ -12,16 +12,22 @@ const authenticate = require('./middleware/authenticate'); // Ensure this path i
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Define your CORS options
+// Define allowed origins
+const allowedOrigins = ['https://main--presidiorent.netlify.app'];
+
 const corsOptions = {
-  origin: 'https://main--presidiorent.netlify.app', // your Netlify frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
 };
 
-// Use CORS with the specified options
 app.use(cors(corsOptions));
-
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
