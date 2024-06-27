@@ -1,9 +1,7 @@
 [build]
-  command = "npm run build"
-  functions = "netlify/functions"
+  base = "frontend/frontpage"
   publish = "frontend/frontpage/build"
+  command = "npm install && npm run build"
 
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
+[functions]
+  directory = "netlify/functions"
