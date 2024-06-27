@@ -33,7 +33,7 @@ const PropertiesList = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/properties');
+        const response = await axios.get('https://rentify-1-7fs6.onrender.com/api/properties');
         setProperties(response.data.properties);
       } catch (error) {
         console.error('Error fetching properties:', error.message);
@@ -56,7 +56,7 @@ const PropertiesList = () => {
     setLoading(true);
   
     try {
-      const response = await axios.get(`http://localhost:3000/api/properties/${property._id}/seller`, {
+      const response = await axios.get(`https://rentify-1-7fs6.onrender.com/api/properties/${property._id}/seller`, {
         headers: { Authorization: `Bearer ${token}` }
       });
   
@@ -73,7 +73,7 @@ const PropertiesList = () => {
   
   const handleLikeClick = async (propertyId) => {
     try {
-      const response = await axios.post(`http://localhost:3000/api/properties/${propertyId}/like`, {}, {
+      const response = await axios.post(`https://rentify-1-7fs6.onrender.com/api/properties/${propertyId}/like`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const updatedLikeCount = response.data.likeCount;

@@ -1,4 +1,3 @@
-//login.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
@@ -19,11 +18,10 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/login', formData);
+      const response = await axios.post('https://rentify-1-7fs6.onrender.com/api/login', formData);
       const { token, user } = response.data;
       localStorage.setItem('token', token);
       localStorage.setItem('firstName', user.firstName);
-
 
       navigate('/dashboard');
     } catch (error) {

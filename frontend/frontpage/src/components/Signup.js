@@ -31,7 +31,7 @@ const Signup = () => {
     }
     try {
       console.log('Sending request:', formData);  // Log the request data
-      const response = await axios.post('http://localhost:3000/api/signup', {
+      const response = await axios.post('https://rentify-1-7fs6.onrender.com/api/signup', {
         firstName: formData.firstName,
         lastName: formData.lastName,
         email: formData.email,

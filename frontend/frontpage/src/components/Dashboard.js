@@ -17,7 +17,7 @@ const Dashboard = () => {
           navigate('/login'); // Redirect to login if no token found
           return;
         }
-        const response = await axios.get('http://localhost:3000/api/dashboard', {
+        const response = await axios.get('https://rentify-1-7fs6.onrender.com/api/dashboard', {
           headers: {
             Authorization: `Bearer ${token}`
           }

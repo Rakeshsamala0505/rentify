@@ -1,4 +1,3 @@
-//addproperty.js
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -19,7 +18,7 @@ const AddProperty = () => {
 
   const fetchProperties = useCallback(async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/properties/user', {
+      const response = await axios.get('https://rentify-1-7fs6.onrender.com/api/properties/user', {
         headers: {
           Authorization: `Bearer ${token}`
         },
@@ -55,7 +54,7 @@ const AddProperty = () => {
     });
 
     try {
-      const response = await axios.post('http://localhost:3000/api/properties', form, {
+      const response = await axios.post('https://rentify-1-7fs6.onrender.com/api/properties', form, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${token}`
@@ -86,7 +85,7 @@ const AddProperty = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:3000/api/properties/${id}`, {
+      const response = await axios.delete(`https://rentify-1-7fs6.onrender.com/api/properties/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         },
