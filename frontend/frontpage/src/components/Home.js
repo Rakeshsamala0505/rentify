@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'; // Import Link component from react-rou
 
 const Home = () => {
   const homeStyle = {
-    backgroundImage: 'url("/bg_image.jpg")',
+    backgroundImage: 'url("/14.jpg")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
@@ -12,7 +12,7 @@ const Home = () => {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    color: 'yellow',
+    color: 'black',
     textAlign: 'center',
     padding: '20px', // Add padding for better spacing
   };
