@@ -151,12 +151,14 @@ const AddProperty = () => {
         <div className="mt-5">
           <h3 style={{ fontSize: '40px', color: 'red' }}>Your Properties</h3>
           <ul className="list-group">
-            {properties.map((property) => (
-              <li key={property._id} className="list-group-item d-flex justify-content-between align-items-center">
-                <strong>Location: {property.place}, Area: {property.area}, Bedrooms: {property.bedrooms}, Restrooms: {property.restrooms}, Price: Rs {property.cost}</strong>
-                <button onClick={() => handleDelete(property._id)} className="btn btn-danger">Delete</button>
-              </li>
-            ))}
+          {properties.map((property) => (
+  <li key={property._id} className="list-group-item d-flex justify-content-between align-items-center">
+    <strong>Location: {property.place}, Area: {property.area}, Bedrooms: {property.bedrooms}, Restrooms: {property.restrooms}, Price: Rs {property.cost}</strong>
+    <img src={`https://rentify-1-7fs6.onrender.com/uploads/${property.image}`} alt={property.place} style={{ width: '100px', height: '100px' }} />
+    <button onClick={() => handleDelete(property._id)} className="btn btn-danger">Delete</button>
+  </li>
+))}
+
           </ul>
         </div>
       )}

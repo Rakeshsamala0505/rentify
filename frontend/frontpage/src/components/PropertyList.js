@@ -180,7 +180,7 @@ const PropertiesList = () => {
           <div className="col-md-4 mb-4" key={property._id}>
             <div className="card" style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 1)', borderRadius: "20px" }}>
               <img
-                src={`http://localhost:3000/${property.image}`}
+                src={`https://rentify-1-7fs6.onrender.com/uploads/${property.image}`}
                 className="card-img-top"
                 alt={property.place}
                 style={{ width: '100%', height: '250px', objectFit: 'cover' }}
@@ -203,10 +203,9 @@ const PropertiesList = () => {
                 <button
                  className="btn btn-light"
                  style={{ padding: '10px', position: 'absolute', right: '10px', top: '140px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-                 onClick={() => handleLikeClick(property._id)}
->
-  <i id={`like-icon-${property._id}`} className={`fa${property.likes.includes(token) ? 's' : 'r'} fa-heart`} style={{ color: property.likes.includes(token) ? 'red' : 'black' }}></i>
-</button>
+                 onClick={() => handleLikeClick(property._id)}>
+                  <i id={`like-icon-${property._id}`} className={`fa${property.likes.includes(token) ? 's' : 'r'} fa-heart`} style={{ color: property.likes.includes(token) ? 'red' : 'black' }}></i>
+                </button>
 
                 <div style={{ position: 'absolute', right: '10px', top: '180px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <i className="fa fa-heart" style={{ color: 'red' }}></i>
