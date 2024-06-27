@@ -14,6 +14,7 @@ const Home = () => {
     alignItems: 'center',
     color: 'white',
     textAlign: 'center',
+    padding: '20px', // Add padding for better spacing
   };
 
   const overlayStyle = {
@@ -24,13 +25,15 @@ const Home = () => {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    padding: '20px', // Add padding for better spacing
   };
 
   return (
-    <div style={homeStyle}>
-      <div style={overlayStyle}>
-        <h1 className="mb-4" style={{ fontSize: '50px' }}>Welcome to Rentify</h1>
-        <p style={{ fontSize: '1.5rem', marginBottom: '20px', margin: '0 auto', padding:'40px' }}>
+    <div className='container-fluid' style={homeStyle}>
+      <div className="row justify-content-center align-items-center" style={overlayStyle}>
+      <div className="col-12">
+        <h1 className="mb-2" style={{ fontSize: '2.5rem' }}>Welcome to Rentify</h1>
+        <p style={{ fontSize: '1.2rem', marginBottom: '15px' }}>
         Welcome to Rentify, your ultimate platform for renting homes and 
         hotel rooms is here! Discover a wide range of options tailored to your needs,
          whether you're looking for a home or a comfortable hotel room.
@@ -39,13 +42,14 @@ const Home = () => {
            experience a seamless, enjoyable rental journey. With Rentify, renting 
            homes and hotel rooms has never been easier!
         </p>
-        <div className="d-flex gap-3">
+        <div className="d-flex justify-content-center">
         <Link to="/login">
-          <button className="btn btn-primary" style={{ fontSize: '2.0rem', padding: '20px 45px' }}>Signin</button>
+          <button className="btn btn-primary btn-lg mx-1">Signin</button>
           </Link>
           <Link to="/signup"> {/* Use Link component to navigate to /signup */}
-            <button className="btn btn-secondary" style={{ fontSize: '2.0rem', padding: '20px 40px' }}>Signup</button>
+            <button className="btn btn-secondary btn-lg mx-1">Signup</button>
           </Link>
+        </div>
         </div>
       </div>
     </div>
