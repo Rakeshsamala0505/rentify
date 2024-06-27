@@ -180,7 +180,7 @@ const PropertiesList = () => {
           <div className="col-md-4 mb-4" key={property._id}>
             <div className="card" style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 1)', borderRadius: "20px" }}>
               <img
-                src={`https://rentify-1-7fs6.onrender.com/uploads/${property.image}`}
+                src={`https://rentify-1-7fs6.onrender.com/${property.image}`}
                 className="card-img-top"
                 alt={property.place}
                 style={{ width: '100%', height: '250px', objectFit: 'cover' }}
