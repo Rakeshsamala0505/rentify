@@ -12,7 +12,7 @@ const Home = () => {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    color: 'white',
+    color: 'yellow',
     textAlign: 'center',
     padding: '20px', // Add padding for better spacing
   };
