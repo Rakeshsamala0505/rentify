@@ -107,12 +107,15 @@ const AddProperty = () => {
   const labelStyle = {
     color: 'black',
     fontStyle: 'normal',
-    fontWeight: 'bolder'
+    fontWeight: 'bolder',
+    fontSize: '14px', // Adjust the font size as needed
+    padding: '2px 0', // Reduce padding to make the label box smaller
+    margin: '0' // Reduce margin to make the label box smaller
   };
 
   return (
     <div className="container mt-3">
-      <div className="card p-5" style={{ maxWidth: '600px', margin: '0 auto', boxShadow: '0 4px 8px rgba(0, 0, 0, 1)', borderRadius: '20px' }}>
+      <div className="card p-5" style={{ maxWidth: '500px', margin: '0 auto', boxShadow: '0 4px 8px rgba(0, 0, 0, 1)', borderRadius: '20px' }}>
         <h2 className="mb-2 card-title text-center">Add Property</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-1">
@@ -140,8 +143,8 @@ const AddProperty = () => {
             <input type="file" className="form-control" id="image" name="image" onChange={handleFileChange} required />
           </div>
           <div className="d-flex justify-content-between">
-            <button type="submit" className="btn btn-primary" style={{ padding: '10px 50px' }}>Add Property</button>
-            <button type="button" className="btn btn-secondary" style={{ padding: '10px 50px' }} onClick={() => navigate('/PropertyList')}>Buy Property</button>
+            <button type="submit" className="btn btn-primary" style={{ padding: '10px 10px' }}>Add Property</button>
+            <button type="button" className="btn btn-secondary" style={{ padding: '10px 10px' }} onClick={() => navigate('/PropertyList')}>Buy Property</button>
           </div>
         </form>
         {successMessage && <div className="alert alert-success mt-3">{successMessage}</div>}
@@ -149,7 +152,7 @@ const AddProperty = () => {
 
       {properties.length > 0 && (
         <div className="mt-5">
-          <h3 style={{ fontSize: '40px', color: 'red' }}>Your Properties</h3>
+          <h3 style={{ fontSize: '20px', color: 'red' }}>Your Properties</h3>
           <ul className="list-group">
             {properties.map((property) => (
               <li key={property._id} className="list-group-item d-flex justify-content-between align-items-center">
