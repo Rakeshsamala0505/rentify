@@ -118,13 +118,7 @@ const PropertiesList = () => {
   return (
     <div className="container mt-4">
       <h1 className="text-center mb-4">Welcome to Rentify</h1>
-      <button
-        className="btn btn-primary"
-        style={{ position: 'absolute', top: '20px', right: '20px' }}
-        onClick={handleAddPropertyClick}
-      >
-        Add Property
-      </button>
+    
       <div className="row mb-5">
         <div className="col-12 col-sm-6 col-md-4 mb-2 mb-md-0">
           <input
@@ -174,6 +168,26 @@ const PropertiesList = () => {
           </select>
         </div>
       </div>
+      {/* Button placed among filters on mobile screens */}
+      <div className="row d-sm-block d-md-none mb-3">
+        <div className="col-12">
+          <button
+            className="btn btn-primary w-100"
+            onClick={handleAddPropertyClick}
+          >
+            Add Property
+          </button>
+        </div>
+      </div>
+
+      {/* Button fixed to top right on larger screens */}
+      <button
+        className="btn btn-primary d-none d-md-block position-fixed top-0 end-0 m-3"
+        style={{ zIndex: 1000 }}
+        onClick={handleAddPropertyClick}
+      >
+        Add Property
+      </button>
 
       <div className="row">
         {sortedProperties.map(property => (
