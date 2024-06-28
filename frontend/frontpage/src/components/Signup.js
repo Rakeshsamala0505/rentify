@@ -75,23 +75,84 @@ const Signup = () => {
     fontStyle: 'normal',
     fontWeight: 'bolder'
   };
+  const containerStyle = {
+    height: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundImage: 'url(13.jpg)', // Path to your background image
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    overflow: 'hidden'
+  };
+
+  const cardStyle = {
+    padding: '10px',
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    border: 'none',
+    borderRadius: '20px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 1)',
+  };
+
+  const mediaQueryStyles = `
+  @media (max-width: 768px) {
+    .card {
+      width: 100%;
+      padding: 10px;
+      margin: 0; /* Remove any extra margin */
+      height: auto; /* Allow card height to adjust */
+    }
+
+    .card-body {
+      padding: 6px; /* Reduce padding inside card body */
+    }
+
+    .form-control {
+      font-size: 12px;
+      padding: 4px; /* Further reduce padding inside input fields */
+      height: 20px;
+
+    }
+
+    .btn {
+      width: 100%;
+      padding: 4px 8px; /* Further reduce button padding */
+    }
+
+    .mb-3 {
+      margin-bottom: 5px; /* Reduce margin between form groups */
+    }
+
+    .text-center {
+      display: flex;
+      flex-direction: column;
+      gap: 5px; /* Reduce gap between elements */
+    }
+
+    .card-title {
+      font-size: 20px; /* Reduce font size of card title */
+    }
+    
+    .form-label {
+      font-size: 12px; /* Reduce font size of form labels */
+    }
+
+    .alert {
+      font-size: 12px; /* Reduce font size of alerts */
+      padding: 4px; /* Reduce padding inside alerts */
+    }
+  }
+`;
 
   return (
-    <div className="container-fluid" style={{ 
-      height: '100vh', 
-      display: 'flex', 
-      justifyContent: 'center', 
-      alignItems: 'center',
-      backgroundImage: 'url(13.jpg)', // Path to your background image
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      overflow: 'hidden'
-    }}>
+    <div className="container-fluid" style={containerStyle}>
+       <style>
+        {mediaQueryStyles}
+      </style>
       <div className="row justify-content-center w-100">
         <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
-          <div className="card" style={{ padding: '10px', backgroundColor: 'rgba(255, 255, 255, 0.5)', border: 'none', borderRadius: '20px',  boxShadow: '0 4px 8px rgba(0, 0, 0, 1)',
- }}>
+          <div className="card" style={cardStyle}>
             <div className="card-body">
               <h2 className="card-title text-center" style={{ color: 'blue' }}>Sign Up</h2>
               {error && <div className="alert alert-danger" role="alert">{error}</div>}
