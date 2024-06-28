@@ -104,7 +104,7 @@ const Login = () => {
 
       .btn {
         width: 100%;
-        padding: 10px 15px;
+        padding: 5px 10px;
       }
 
       .card-title {

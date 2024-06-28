@@ -45,8 +45,42 @@ const Dashboard = () => {
     navigate('/properties');
   };
 
-  const backgroundImage = "url('login_bg.jpg')"; // replace with your image URL
+  const backgroundImage = "url('15.jpg')"; // replace with your image URL
+  const mediaQueryStyles = `
+  @media (max-width: 768px) {
+    .dashboard-container {
+      padding: 20px; /* Adjust padding for better fit */
+      max-width: 100vw;
+      background-color: rgba(255, 255, 255, 1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+      border-radius: 20px;
+      margin: 0;
+    }
 
+    .dashboard-content {
+      padding: 10px; /* Adjust padding for better fit */
+      font-size: 20px;
+    }
+
+    .dashboard-title {
+      font-size: 20px;
+    }
+
+    .dashboard-description {
+      font-size: 20px;
+    }
+
+    .dashboard-button {
+      padding: 5px 10px;
+      font-size: 14px;
+      border-radius: 10px;
+    }
+
+    .first-name {
+      font-size: 20px;
+    }
+  }
+`;
   if (error) {
     return <div className="alert alert-danger" role="alert">{error}</div>;
   }
@@ -78,33 +112,38 @@ const Dashboard = () => {
 
       }}
     >
+      <style>
+        {mediaQueryStyles}
+      </style>
       <div className="row justify-content-center w-100">
         <div 
-          className="col-12 col-md-8 text-center p-5 rounded" 
+          className="col-12 col-md-8 text-center p-4 dashboard-container" 
           style={{ 
             maxWidth: '600px', 
-            backgroundColor: 'rgba(255, 255, 255, 0.5)', // Make the card background transparent
-            boxShadow: '0 4px 8px rgba(0, 0, 0, 1)' 
+            backgroundColor: 'rgba(255, 255, 255, 0.6)', // Make the card background transparent
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 1)',
+            borderRadius: '20px', // Ensure this is set for larger screens as well
+            padding: '20px', 
           }}
         >
-         <h1 className="mb-4">
-             Welcome to Rentify <span style={{ color: 'blue', fontSize: '40px', fontWeight: 'bold', textTransform: 'uppercase' }}>{firstName}</span>
+         <h1 className="mb-4 dashboard-title" style={{ fontSize: '20px' }}>
+             Welcome to Rentify <span style={{ color: 'blue', fontSize: '20px', fontWeight: 'bold', textTransform: 'uppercase' }}>{firstName}</span>
          </h1>
 
-          <p className="mb-4" style={{ fontSize: '20px' }}>
+          <p className="mb-4 dashboard-description" style={{ fontSize: '20px', margin: '0px' }}>
             Choose whether you are a seller or a buyer to proceed.
             You can either sell or rent a property by clicking the buttons below.
           </p>
-          <div className="mt-4 d-flex justify-content-center">
+          <div className="mt-4 d-flex justify-content-center dashboard-content">
             <button onClick={handleAddProperty}
-              className="btn btn-primary" 
-              style={{ padding: '15px 30px', fontSize: '18px', marginRight: '20px' }}
+              className="btn btn-primary dashboard-button" 
+              style={{ padding: '10px 30px', fontSize: '18px', marginRight: '20px' }}
             >
               Seller
             </button>
             <button onClick={handleBuyerClick}
-              className="btn btn-secondary" 
-              style={{ padding: '15px 30px', fontSize: '18px', marginLeft: '20px' }}
+              className="btn btn-secondary dashboard-button" 
+              style={{ padding: '10px 30px', fontSize: '18px', marginLeft: '20px' }}
             >
               Buyer
             </button>
