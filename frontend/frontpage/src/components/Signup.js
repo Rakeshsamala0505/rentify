@@ -238,8 +238,8 @@ const Signup = () => {
                   />
                 </div>
                 <div className="text-center">
-                  <button type="submit" className="btn btn-primary" style={{ padding: '10px 30px', marginRight: '10px' }}>Submit</button>
-                  <button type="button" className="btn btn-secondary" style={{ padding: '10px 30px' }} onClick={() => navigate('/login')}>Login</button>
+                  <button type="submit" className="btn btn-primary" style={{ padding: '5px 15px', marginRight: '10px' }}>Submit</button>
+                  <button type="button" className="btn btn-secondary" style={{ padding: '5px 15px' }} onClick={() => navigate('/login')}>Login</button>
                 </div>
               </form>
             </div>

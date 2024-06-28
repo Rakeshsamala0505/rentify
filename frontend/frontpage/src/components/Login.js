@@ -34,18 +34,108 @@ const Login = () => {
     }
   };
 
+  const mediaQueryStyles = `
+    .card {
+      padding: 40px;
+      max-width: 600px;
+      background-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      border-radius: 30px;
+      margin: auto;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .form-control {
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px 20px;
+    }
+
+    .mb-4 {
+      margin-bottom: 20px;
+    }
+
+    .text-center {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card-title {
+      font-size: 24px;
+      color: blue;
+    }
+
+    .form-label {
+      font-size: 18px;
+      color: black;
+      font-weight: bold;
+    }
+
+    .alert {
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        padding: 20px;
+        max-width: 90vw;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+        margin: auto;
+      }
+
+      .card-body {
+        padding: 10px;
+      }
+
+      .form-control {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 10px 15px;
+      }
+
+      .card-title {
+        font-size: 22px;
+      }
+
+      .form-label {
+        font-size: 16px;
+      }
+
+      .alert {
+        font-size: 14px;
+      }
+    }
+  `;
+
   return (
     <div style={containerStyle}>
+      <style>
+        {mediaQueryStyles}
+      </style>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-6 col-lg-4">
-            <div className="card" style={cardStyle}>
+            <div className="card" >
               <div className="card-body">
                 <h2 className="card-title text-center" style={{ color: 'blue' }}>Login</h2>
                 {error && <div className="alert alert-danger" role="alert">{error}</div>}
-                <form onSubmit={handleSubmit} style={formStyle}>
+                <form onSubmit={handleSubmit} >
                   <div className="mb-4">
-                    <label htmlFor="email" className="form-label" style={labelStyle}>Email</label>
+                    <label htmlFor="email" className="form-label" >Email</label>
                     <input
                       type="email"
                       className="form-control"
@@ -58,7 +148,7 @@ const Login = () => {
                     />
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="password" className="form-label" style={labelStyle}>Password</label>
+                    <label htmlFor="password" className="form-label" >Password</label>
                     <input
                       type="password"
                       className="form-control"
@@ -93,31 +183,16 @@ const containerStyle = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  backgroundImage: 'url(dashboard.jpg)',
+  backgroundImage: 'url(15.jpg)',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
-  fontSize:'18px'
-};
-
-const cardStyle = {
-  padding: '60px',
-  maxWidth: '600px',
-  backgroundColor: 'rgba(255, 255, 255, 0.5)',
-  boxShadow: '0 4px 8px rgba(0, 0, 0, 1)',
-  borderRadius:'30px'
-};
-
-const formStyle = {
-  width: '100%'
-};
-
-const labelStyle = {
-  color: 'black',
-  fontStyle: 'normal',
-  fontWeight: 'bolder',
-  fontSize:'18px'
-
+  fontSize: '18px',
+  padding: '10px',
+  backgroundColor: 'rgba(255, 255, 255, 0)',
+  border: 'none',
+  borderRadius: '20px',
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)',
 };
 
 export default Login;
