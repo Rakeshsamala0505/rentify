@@ -209,7 +209,7 @@ const PropertiesList = () => {
                 </div>
                 <button
                   className="btn btn-primary"
-                  style={{ padding: '10px 20px', marginTop: '-140px', position: 'absolute', right: '10px' }}
+                  style={{ padding: '5px 5px', marginTop: '-140px', position: 'absolute', right: '10px' }}
                   onClick={() => handleInterestedClick(property)}
                 >
                   I'm Interested
