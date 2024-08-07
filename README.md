@@ -28,7 +28,7 @@ Rentify is a full-featured real estate rental platform built using the MERN stac
     cd client
     npm install
    cd ..
-3. **Set up environment variables:**
+3. **Set up environment variables:.**
     *Create a .env file in the root directory and add the following variables:*
    ```bash
    MONGO_URI=your_mongodb_connection_string
