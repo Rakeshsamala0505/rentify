@@ -33,10 +33,8 @@ Rentify is a full-featured real estate rental platform built using the MERN stac
    MONGO_URI=your_mongodb_connection_string
    JWT_SECRET=your_secret_key
 4. **Run the application:**
-  *Start the backend server*
    ```bash
     npm run server
-  *Start the frontend server*
     ```bash
      npm run server
 5. **Access the application:**
